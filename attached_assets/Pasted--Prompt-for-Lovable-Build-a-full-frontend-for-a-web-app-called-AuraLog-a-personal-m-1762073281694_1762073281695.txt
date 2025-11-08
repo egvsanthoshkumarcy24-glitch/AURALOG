@@ -1,0 +1,89 @@
+### 💡 *Prompt for Lovable*
+
+> Build a full *frontend* for a web app called *AuraLog* — a personal mood tracking and emotional wellness journal — using *React + JavaScript + Vite*.
+> The UI should be *modern, calming, and minimal, using **TailwindCSS* with soft gradients (lavender, sky blue, and purple tones) and rounded cards.
+>
+> ---
+>
+> ### ⚙ Tech Stack
+>
+> * React (JavaScript, no TypeScript)
+> * TailwindCSS for styling
+> * Supabase for authentication (email/password login & signup)
+> * RunAnywhere SDK for real-time emotion analysis (video + audio)
+>
+> ---
+>
+> ### 🧠 App Structure
+>
+> 1. *Auth Pages*
+>
+>    * Login and Signup using Supabase Auth.
+>    * Minimal card layout with app name *“AuraLog”* and tagline “Track your emotions effortlessly.”
+> 2. *Dashboard (Home Page)*
+>
+>    * Welcome message with the user’s name.
+>    * Two main cards/buttons:
+>
+>      * 🎥 *Video Session* → goes to real-time webcam emotion tracking.
+>      * 🎙 *Voice Journal* → goes to voice-based journaling and mood analysis.
+> 3. *Video Session Page*
+>
+>    * Show *live webcam preview*.
+>    * Real-time emotion analysis from *RunAnywhere SDK*:
+>
+>      * Emotion label (happy, sad, calm, stressed, etc.)
+>      * Confidence percentage
+>      * Stress level indicator
+>    * *Controls:* Start / Pause / Stop session.
+>    * *Line chart* showing emotion & stress trends (update every second).
+> 4. *Voice Journal Page*
+>
+>    * Simple layout with:
+>
+>      * 🎤 Record / Stop voice input button.
+>      * Display detected *emotion + confidence*.
+>      * Convert voice to text (mock for now).
+>      * Editable text area for journal entry.
+>      * “Save Journal” button (mock API call).
+> 5. *Logs Page (Button name: “Log”)*
+>
+>    * When clicked, it opens a page with title *“Insights”* (page heading should show “Insights”, not “Log”).
+>    * Contains two tabs:
+>
+>      * *Video Logs:* past video sessions (date, duration, dominant emotion).
+>      * *Voice Logs:* past audio journals (date, emotion summary, journal text snippet).
+>    * Option to open each session in detail with emotion chart.
+> 6. *Navigation Bar*
+>
+>    * Links: Dashboard | Log | Profile | Logout
+>    * Responsive design (top or sidebar layout).
+> 7. *Profile / Settings Page*
+>
+>    * Update name, email, and theme (light/dark toggle).
+>
+> ---
+>
+> ### ✨ Additional Notes
+>
+> * Use mock data for emotion and journal history (until backend integration).
+> * Create modular, reusable components (Card, Button, Chart, etc.).
+> * Use Framer Motion for smooth animations.
+> * Keep everything mobile-friendly and clean.
+> * Add placeholder JS functions for RunAnywhere SDK calls:
+>
+>   js
+>   analyzeVideoFrame();
+>   analyzeAudioChunk();
+>   
+> * Store mock logs locally in localStorage for demo.
+>
+> ---
+>
+> Output should include:
+>
+> * Working navigation flow
+> * Basic state management with React hooks
+> * Example mock logs for both video and audio sessions
+
+---
