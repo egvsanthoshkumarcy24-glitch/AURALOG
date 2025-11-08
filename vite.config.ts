@@ -7,7 +7,7 @@ export default defineConfig({
     react()
   ],
   root: path.resolve(import.meta.dirname, "client"),
-  envDir: path.resolve(import.meta.dirname, "client"),
+  envDir: path.resolve(import.meta.dirname), // Load .env from root directory
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),

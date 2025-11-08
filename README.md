@@ -44,25 +44,22 @@ pnpm install
    - Get your project URL and anon key
 
 4. Set up environment variables:
-   - Navigate to the client directory
-   - Create a `.env` file in the client directory
-   - Add the following variables:
+   - Copy `.env.example` to `.env` in the root directory
+   - Update the values with your Supabase credentials:
 ```env
 VITE_SUPABASE_URL=your_supabase_project_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_API_URL=http://localhost:3000/api
 ```
 
 ### Running the Application
 
 1. Start the development server:
 ```bash
-# Navigate to the client directory
-cd client
-
 # Using npm
 npm run dev
 
-# Using pnpm
+# Using pnpm (recommended)
 pnpm dev
 ```
 
@@ -72,18 +69,45 @@ pnpm dev
 
 ```
 auralog/
-├── client/                 # Frontend application
-│   ├── src/
-│   │   ├── components/    # Reusable UI components
-│   │   ├── contexts/      # React contexts
-│   │   ├── hooks/        # Custom React hooks
-│   │   ├── lib/          # Utility functions
-│   │   ├── pages/        # Application pages
-│   │   └── types/        # TypeScript type definitions
-│   ├── public/           # Static assets
-│   └── .env             # Environment variables
-├── docs/                 # Documentation
-└── README.md            # Project documentation
+├── .env                    # Environment variables (not in git)
+├── .env.example           # Environment variables template
+├── .gitignore             # Git ignore rules
+├── package.json           # Project dependencies and scripts
+├── vite.config.ts         # Vite configuration
+├── tsconfig.json          # TypeScript configuration
+├── tailwind.config.ts     # TailwindCSS configuration
+├── components.json        # Shadcn UI configuration
+├── drizzle.config.ts      # Database configuration
+├── README.md              # Project documentation
+│
+├── client/                # Frontend application
+│   ├── index.html         # HTML entry point
+│   ├── public/            # Static assets
+│   └── src/
+│       ├── App.tsx        # Root component
+│       ├── main.tsx       # Application entry point
+│       ├── index.css      # Global styles
+│       ├── components/    # Reusable UI components
+│       │   ├── ui/        # Base UI components (shadcn)
+│       │   └── examples/  # Example component implementations
+│       ├── contexts/      # React contexts (Auth, Theme)
+│       ├── hooks/         # Custom React hooks
+│       ├── lib/           # Utility functions and helpers
+│       └── pages/         # Application pages/routes
+│
+├── server/                # Backend API
+│   ├── index.ts           # Server entry point
+│   ├── routes.ts          # API routes
+│   ├── storage.ts         # Storage logic
+│   └── vite.ts            # Vite integration
+│
+├── db/                    # Database configuration
+│   └── index.ts           # Database setup
+│
+├── shared/                # Shared types and schemas
+│   └── schema.ts          # Shared data schemas
+│
+└── attached_assets/       # Project assets and documentation
 ```
 
 ## 🛠️ Built With
@@ -139,7 +163,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ### Common Issues
 
 1. **Environment Variables Not Loading**
-   - Ensure your `.env` file is in the correct location (client directory)
+   - Ensure your `.env` file is in the root directory
    - Make sure all variable names start with `VITE_`
    - Restart the development server after adding new environment variables
 
