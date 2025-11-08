@@ -18,12 +18,15 @@ export default function Login() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await login(email, password);
-      setLocation("/dashboard");
-      toast({
-        title: "Welcome back!",
-        description: "You've successfully logged in.",
-      });
+      const user = await login(email, password);
+      if (user) {
+        toast({
+          title: "Welcome back!",
+          description: "You've successfully logged in.",
+        });
+        // Use a small delay to ensure auth state is properly updated
+        setTimeout(() => setLocation("/dashboard"), 100);
+      }
     } catch (error) {
       toast({
         title: "Error",

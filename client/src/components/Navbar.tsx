@@ -28,11 +28,11 @@ export default function Navbar() {
         <div className="container flex h-16 items-center justify-between px-8">
           <div className="flex items-center gap-8">
             <Link href="/dashboard">
-              <a className="flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 <h1 className="text-2xl font-serif font-semibold bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent">
                   AuraLog
                 </h1>
-              </a>
+              </div>
             </Link>
             <div className="flex gap-1">
               {navItems.map((item) => (

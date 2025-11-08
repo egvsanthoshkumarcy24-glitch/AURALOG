@@ -1,13 +1,10 @@
-import { drizzle } from "drizzle-orm/neon-serverless";
-import ws from "ws";
-import * as schema from "@shared/schema";
+import { createClient } from '@supabase/supabase-js';
 
-if (!process.env.DATABASE_URL) {
-  throw new Error("DATABASE_URL environment variable is required");
+const supabaseUrl = process.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error("Supabase URL and Anon Key are required");
 }
 
-export const db = drizzle({
-  connection: process.env.DATABASE_URL,
-  schema,
-  ws: ws,
-});
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
